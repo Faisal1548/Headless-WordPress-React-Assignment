@@ -43,7 +43,11 @@ function CptList() {
   return (
     <section>
       {/* TODO: Replace "Portfolio" with your CPT name */}
-      <h1>Portfolio</h1>
+      <div className="section-header">
+        <h1>Menu</h1>
+        <p>Explore our signature dishes and daily specials at Perth Bangla Cafe.</p>
+      </div>
+
 
       {items.length === 0 ? (
         <p>No items found. Add entries to your Custom Post Type in WordPress first.</p>

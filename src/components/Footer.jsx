@@ -1,8 +1,10 @@
 function Footer() {
   return (
     <footer className="site-footer">
-      {/* TODO: Update with your site name and scenario */}
-      <p>&copy; {new Date().getFullYear()} My Site. Built with React + WordPress.</p>
+      <div className="container footer-inner">
+        <p>Perth Bangla Cafe — locally crafted Bangladeshi comfort food.</p>
+        <p>&copy; {new Date().getFullYear()} Perth Bangla Cafe. Built with React + WordPress.</p>
+      </div>
     </footer>
   )
 }
