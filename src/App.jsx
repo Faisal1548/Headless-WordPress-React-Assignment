@@ -20,6 +20,9 @@ function App() {
           <Route path="/cpt" element={<CptList />} />
           <Route path="/cpt/:id" element={<CptDetail />} />
           <Route path="/page/:slug" element={<WpPage />} />
+          <Route path="/about" element={<WpPage slug="about" />} />
+          <Route path="/contact" element={<WpPage slug="contact" />} />
+          
         </Routes>
       </main>
       <Footer />

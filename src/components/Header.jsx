@@ -12,12 +12,13 @@ function Header() {
         </div>
 
         <nav className="site-nav">
-          <ul>
+         <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/cpt">Menu</Link></li>
             <li><Link to="/blog">Blog</Link></li>
-            <li><Link to="/page/contact">Contact</Link></li>
-          </ul>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul> 
         </nav>
       </div>
     </header>

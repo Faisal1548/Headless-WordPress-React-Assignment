@@ -23,7 +23,7 @@ function Home() {
     const fetchData = async () => {
       try {
         const [postsResponse, menuResponse] = await Promise.all([
-          fetch(`${API}/wp/v2/posts?_embed&per_page=3`),
+          fetch(`${API}/posts?_embed&per_page=3`),
           fetch(`${API}/${CPT}?_embed&per_page=3`),
         ])
 

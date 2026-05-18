@@ -5,21 +5,24 @@
 // page with slug "about". Make sure your WordPress page slugs match.
 
 import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import ApiError from '../components/ApiError'
 
 const API = import.meta.env.VITE_WP_API_URL
 
-function WpPage() {
-  const { slug } = useParams()
+function WpPage({ slug: slugProp }) {
+  const params = useParams()
+  const slug = slugProp || params.slug
+
   const [page, setPage] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {
+    if (!slug) return
+
     const fetchPage = async () => {
       try {
-        // WordPress pages API supports filtering by slug
         const response = await fetch(`${API}/pages?slug=${slug}`)
         if (!response.ok) throw new Error(`HTTP error: ${response.status}`)
         const data = await response.json()
@@ -35,6 +38,7 @@ function WpPage() {
     fetchPage()
   }, [slug])
 
+  if (!slug) return <p className="error">No page specified.</p>
   if (loading) return <p className="loading">Loading...</p>
   if (error) return <ApiError error={error} context="page" />
 
